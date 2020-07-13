@@ -15,7 +15,7 @@ class Stock:
 
     def _find_cik(self):
         df = get_cik()
-        df = pd.read_csv(SYMBOLS_DATA_PATH, converters={'cik' : str})
+        #df = pd.read_csv(SYMBOLS_DATA_PATH, converters={'cik' : str})
         try:
             cik = df[self.symbol]
             #cik = df.loc[df['symbol'] == self.symbol]['cik'].iloc[0]
