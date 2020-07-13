@@ -16,7 +16,7 @@ test_requirements = [
 
 
 about = {}
-with open(os.path.join(here, 'edgar', '__version__.py'), mode='r', encoding='utf-8') as f:
+with open(os.path.join(here, 'edgarsec', '__version__.py'), mode='r', encoding='utf-8') as f:
     exec(f.read(), about)
 
 with open('README.md', mode='r', encoding='utf-8') as f:
@@ -32,8 +32,8 @@ setup(
     author_email=about['__author_email__'],
     url=about['__url__'],
     license=about['__license__'],
-    packages=['edgar'],
-    keywords=['sec', 'edgar', 'financials', 'stock', 'fundamental', 'analysis'],
+    packages=['edgarsec'],
+    keywords=['sec', 'edgarsec', 'financials', 'stock', 'fundamental', 'analysis'],
     python_requires="==3.7",
     install_requires=requires,
     tests_require=test_requirements,
