@@ -5,6 +5,7 @@ import pandas as pd
 from edgar.edgar import get_financial_filing_info, get_latest_quarter_dir, find_latest_filing_info_going_back_from, SYMBOLS_DATA_PATH
 from edgar.filing import Filing
 from datetime import datetime
+from edgar.find_cik import get_cik
 
 class Stock:
     def __init__(self, symbol):
@@ -13,13 +14,15 @@ class Stock:
 
 
     def _find_cik(self):
+        df = get_cik()
         df = pd.read_csv(SYMBOLS_DATA_PATH, converters={'cik' : str})
         try:
-            cik = df.loc[df['symbol'] == self.symbol]['cik'].iloc[0]
+            cik = df[self.symbol]
+            #cik = df.loc[df['symbol'] == self.symbol]['cik'].iloc[0]
             print('cik for {} is {}'.format(self.symbol, cik))
             return cik
         except IndexError as e:
-            raise IndexError('could not find cik, must add to symbols.csv') from None
+            raise IndexError('could not find symbol {}'.format(self.symbol)) from None
 
 
     def get_filing(self, period='annual', year=0, quarter=0):
