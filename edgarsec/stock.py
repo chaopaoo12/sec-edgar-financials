@@ -2,10 +2,10 @@
 This module ties it all together; it will be the main module that's used 
 '''
 import pandas as pd
-from edgar.edgar import get_financial_filing_info, get_latest_quarter_dir, find_latest_filing_info_going_back_from, SYMBOLS_DATA_PATH
-from edgar.filing import Filing
+from edgarsec.edgar import get_financial_filing_info, get_latest_quarter_dir, find_latest_filing_info_going_back_from, SYMBOLS_DATA_PATH
+from edgarsec.filing import Filing
 from datetime import datetime
-from edgar.find_cik import get_cik
+from edgarsec.find_cik import get_cik
 
 class Stock:
     def __init__(self, symbol):

@@ -1,11 +1,11 @@
 '''
 Logic related to the handling of filings and documents
 '''
-from edgar.requests_wrapper import GetRequest
-from edgar.document import Document
-from edgar.sgml import Sgml
-from edgar.dtd import DTD
-from edgar.financials import get_financial_report
+from edgarsec.requests_wrapper import GetRequest
+from edgarsec.document import Document
+from edgarsec.sgml import Sgml
+from edgarsec.dtd import DTD
+from edgarsec.financials import get_financial_report
 from datetime import datetime
 
 

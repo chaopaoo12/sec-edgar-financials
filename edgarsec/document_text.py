@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-from edgar.dtd import DTD
+from edgarsec.dtd import DTD
 
 
 # according to the EDGAR SGML specs, DOCUMENT.TEXT has the following children
